@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/corner_round_rectangle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialogLL"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_30sdp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_success">
+
+                        </ImageView>
+
+
+                        <TextView
+                            android:id="@+id/tvGuestInstruction"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:clipToOutline="true"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:fontFamily="@font/poppins_medium"
+                            android:padding="@dimen/_8sdp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/success"
+                            android:textSize="@dimen/_16sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/create_successfully"
+                            android:textColor="@color/black"
+                            android:justificationMode="none"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textSize="@dimen/_13sdp"
+                            android:layout_gravity="center">
+
+                        </TextView>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+
+</RelativeLayout>

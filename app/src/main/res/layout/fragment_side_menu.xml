@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handleClick"
+            type="com.cccoach.utils.HandleClickListener" />
+
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/favouriteTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_8sdp"
+                android:drawableEnd="@drawable/ic_forward"
+                android:drawableStart="@drawable/ic_favourite"
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/favourites"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_14ssp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/changPasswordTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_forward"
+                android:drawablePadding="@dimen/_8sdp"
+                android:drawableStart="@drawable/ic_key"
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/change_password"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_14ssp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintTop_toBottomOf="@+id/favouriteTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/contactusTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_forward"
+                android:drawablePadding="@dimen/_8sdp"
+                android:drawableStart="@drawable/ic_contactus"
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/contact_us"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_14ssp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="@id/changPasswordTV"
+                app:layout_constraintStart_toStartOf="@id/changPasswordTV"
+                app:layout_constraintTop_toBottomOf="@id/changPasswordTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/faqTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_8sdp"
+                android:drawableStart="@drawable/ic_faq"
+                android:drawableEnd="@drawable/ic_forward"
+                app:fontFamily="@font/poppins_medium"
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/faqs"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="@id/contactusTV"
+                app:layout_constraintStart_toStartOf="@id/contactusTV"
+                app:layout_constraintTop_toBottomOf="@id/contactusTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/privacyPolicyTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_8sdp"
+                android:drawableStart="@drawable/ic_policy"
+                android:drawableEnd="@drawable/ic_forward"
+                app:fontFamily="@font/poppins_medium"
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/privacy_policy"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="@id/faqTV"
+                app:layout_constraintStart_toStartOf="@id/faqTV"
+                app:layout_constraintTop_toBottomOf="@id/faqTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/aboutusTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_8sdp"
+                android:drawableStart="@drawable/ic_aboutus"
+                android:drawableEnd="@drawable/ic_forward"
+                app:fontFamily="@font/poppins_medium"
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/about_us"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="@id/privacyPolicyTV"
+                app:layout_constraintStart_toStartOf="@id/privacyPolicyTV"
+                app:layout_constraintTop_toBottomOf="@id/privacyPolicyTV" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/termsandconditionsTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_8sdp"
+                android:drawableStart="@drawable/tconditions"
+                android:drawableEnd="@drawable/ic_forward"
+                app:fontFamily="@font/poppins_medium"
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/terms_and_conditions"
+                android:textColor="@color/Black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="@id/aboutusTV"
+                app:layout_constraintStart_toStartOf="@id/aboutusTV"
+                app:layout_constraintTop_toBottomOf="@id/aboutusTV" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logOutIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_24sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/logout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+
+
+
+
+</layout>
+

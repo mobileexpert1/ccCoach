@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="handleClick"
+            type="com.cccoach.utils.HandleClickListener" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.Verification.VerificationFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/backIV"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/ic_back" />
+
+                <TextView
+                    android:id="@+id/verificationTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/backIV"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/verification"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColor="#082562"
+                    android:textSize="@dimen/_20ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/verificationmsgTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/verificationTV"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/verification_code"
+                    android:textColor="#626262"
+                    android:textSize="@dimen/_12sdp">
+
+                </TextView>
+
+
+                <in.aabhasjindal.otptextview.OtpTextView
+                    android:id="@+id/otp_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/verificationmsgTV"
+                    android:layout_marginTop="@dimen/_100sdp"
+                    android:textColor="@color/black"
+                    app:bar_enabled="true"
+                    android:layout_centerInParent="true"
+                    app:bar_active_color="@color/grey"
+                    app:bar_height="2dp"
+                    app:length="4"
+                    app:otp=""
+                    app:otp_text_size="24dp"
+                    app:width="60dp" />
+
+
+                <TextView
+                    android:id="@+id/resendTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/otp_view"
+                    android:layout_centerInParent="true"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                    android:layout_marginTop="@dimen/_20ssp"
+                    android:text="@string/resend_otp"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_14sdp">
+
+                </TextView>
+
+                <View
+                    android:layout_below="@+id/resendTV"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="1sp"
+                    android:layout_centerInParent="true"
+                    android:background="#000000" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/verificationcontinueTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/darkblue_rect"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:gravity="center"
+                        android:onClick="@{(view)->handleClick.onViewClick(view)}"
+                        android:paddingVertical="@dimen/_10sdp"
+                        android:text="@string/continu"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp"
+                        />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+</layout>
