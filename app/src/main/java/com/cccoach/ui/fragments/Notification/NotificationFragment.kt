@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cccoach.R
-import com.cccoach.databinding.FragmentContactUsBinding
 import com.cccoach.databinding.FragmentNotificationBinding
-import com.cccoach.ui.adapter.ContactUs.ContactUsAdapter
 import com.cccoach.ui.adapter.NotificationAdapter.NotificationAdapter
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.utils.HandleClickListener

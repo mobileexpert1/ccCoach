@@ -7,15 +7,13 @@ import androidx.databinding.DataBindingUtil
 import com.cccoach.R
 import com.cccoach.databinding.ActivityMainBinding
 import com.cccoach.ui.base.BaseActivity
-import com.cccoach.ui.extensions.addFragment
 import com.cccoach.ui.extensions.replaceFragment
 import com.cccoach.ui.extensions.setColor
 import com.cccoach.ui.extensions.visibleView
-import com.cccoach.ui.fragments.learner.home.HomeFragment
-import com.cccoach.ui.fragments.learner.myrequest.MyRequestFragment
-import com.cccoach.ui.fragments.learner.notification.NotificationFragment
-import com.cccoach.ui.fragments.learner.sidemenu.SideMenuFragment
-import com.cccoach.ui.fragments.timebooking.TimeBookingFragment
+import com.cccoach.ui.fragments.Learner.home.HomeFragment
+import com.cccoach.ui.fragments.Learner.myrequest.MyRequestFragment
+import com.cccoach.ui.fragments.notification.NotificationFragment
+import com.cccoach.ui.fragments.sidemenu.SideMenuFragment
 import com.cccoach.utils.HandleClickListener
 
 class MainActivity : BaseActivity(), HandleClickListener {

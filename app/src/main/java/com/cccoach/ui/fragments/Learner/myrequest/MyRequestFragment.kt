@@ -1,4 +1,4 @@
-package com.cccoach.ui.fragments.learner.myrequest
+package com.cccoach.ui.fragments.Learner.myrequest
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -34,6 +34,13 @@ class MyRequestFragment : BaseFragment(), HandleClickListener,CoachAdapter.Click
 
     private fun initUI() {
         binding!!.handleClick=this
+
+        //Bottom navigation hide
+        (baseActivity as MainActivity).setIcon()
+        (baseActivity as MainActivity).setToolbar(
+            baseActivity!!.getString(R.string.ll),
+            isTitle = true, isToolbar = false, isBottom = true
+        )
         val rvCoachList = binding!!.rvCoachList
         val coachAdapter = CoachAdapter(requireContext(),this)
         val linearLayoutManager = LinearLayoutManager(context)

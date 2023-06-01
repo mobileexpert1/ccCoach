@@ -1,4 +1,4 @@
-package com.cccoach.ui.fragments.learner.notification
+package com.cccoach.ui.fragments.notification
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cccoach.R
 import com.cccoach.databinding.FragmentNotificationBinding
-import com.cccoach.databinding.FragmentTutorialGuideLSBinding
 import com.cccoach.ui.activities.MainActivity
 import com.cccoach.ui.adapter.NotificationAdapter.NotificationAdapter
 import com.cccoach.ui.base.BaseFragment

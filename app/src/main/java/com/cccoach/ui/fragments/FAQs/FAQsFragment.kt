@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ExpandableListView
 import com.cccoach.R
 import com.cccoach.databinding.FragmentFAQsBinding
+import com.cccoach.ui.activities.MainActivity
 import com.cccoach.ui.adapter.ExpandableList.ThreeLevelListAdapter
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.utils.HandleClickListener
@@ -58,6 +59,14 @@ class FAQsFragment : BaseFragment(), HandleClickListener{
     private fun initUI() {
 
         binding!!.handleClick=this
+
+        //Bottom navigation hide
+        (baseActivity as MainActivity).setIcon()
+        (baseActivity as MainActivity).setToolbar(
+            baseActivity!!.getString(R.string.ll),
+            isTitle = true, isToolbar = false, isBottom = false
+        )
+
         // parent adapter
         val threeLevelListAdapterAdapter = ThreeLevelListAdapter(requireContext(), parent, secondLevel, data)
         // set adapter

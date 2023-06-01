@@ -80,6 +80,7 @@
                     android:textSize="@dimen/_14ssp"
                     android:layout_height="match_parent"
                     android:gravity="start"
+                    android:singleLine="true"
                     android:background="@null"
                     android:padding="@dimen/_6sdp"
                     android:hint="@string/search" />

@@ -17,7 +17,6 @@ class CoachAdapter(val context: Context, private var listener: ClickListeners) :
 
     }
 
-
     interface ClickListeners {
         fun onclick(position: Int)
     }

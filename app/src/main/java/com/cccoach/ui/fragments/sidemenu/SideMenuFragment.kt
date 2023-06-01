@@ -1,5 +1,7 @@
-package com.cccoach.ui.fragments.learner.sidemenu
+package com.cccoach.ui.fragments.sidemenu
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,8 +17,7 @@ import com.cccoach.ui.fragments.ContactUs.ContactUsFragment
 import com.cccoach.ui.fragments.FAQs.FAQsFragment
 import com.cccoach.ui.fragments.PrivacyPolicy.PrivacyPolicyFragment
 import com.cccoach.ui.fragments.TermsAndCondition.TermsAndConditionFragment
-import com.cccoach.ui.fragments.Verification.VerificationFragment
-import com.cccoach.ui.fragments.learner.favourite.FavouriteFragment
+import com.cccoach.ui.fragments.Favourite.FavouriteFragment
 import com.cccoach.utils.HandleClickListener
 
 
@@ -92,7 +93,20 @@ class SideMenuFragment : BaseFragment(), HandleClickListener {
     }
 
     private fun gotoLogout() {
-        TODO("Not yet implemented")
+        val dialogBuilder = AlertDialog.Builder(requireContext())
+        dialogBuilder.setMessage("Are your sure you want to logout the app ?")
+            .setCancelable(false)
+            .setPositiveButton("Yes", DialogInterface.OnClickListener {
+                    dialog, id ->
+                baseActivity!!.finish()
+               // dialog.dismiss()
+
+            })
+
+        val alert = dialogBuilder.create()
+        alert.setTitle("Alert Message !")
+        alert.show()
+
     }
 
     private fun gotoAboutUsFragment() {
