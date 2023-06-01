@@ -29,7 +29,6 @@ class LoginFragment : BaseFragment(),HandleClickListener {
         super.onCreate(savedInstanceState)
         arguments?.let {
 
-
         }
 
     }
@@ -81,6 +80,9 @@ class LoginFragment : BaseFragment(),HandleClickListener {
             }
             R.id.forgotPasswordTV -> {
                 forgotPasswordFragment()
+            }
+            R.id.backIV -> {
+                requireActivity().supportFragmentManager.popBackStack()
             }
         }
 

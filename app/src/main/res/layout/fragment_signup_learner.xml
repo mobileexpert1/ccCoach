@@ -31,6 +31,7 @@
                     android:id="@+id/backIV"
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
                     android:layout_alignParentTop="true"
                     android:src="@drawable/ic_back" />
 
@@ -135,6 +136,7 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
                             android:layout_marginLeft="@dimen/_4sdp"
+                            android:onClick="@{(view)->handleClick.onViewClick(view)}"
                             android:src="@drawable/ic_hide"
                             android:visibility="visible" />
 
@@ -143,10 +145,11 @@
                             android:id="@+id/passwordcloseEyeImv"
                             android:layout_width="@dimen/_16sdp"
                             android:layout_height="@dimen/_16sdp"
+                            android:onClick="@{(view)->handleClick.onViewClick(view)}"
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
                             android:layout_marginLeft="@dimen/_4sdp"
-                            android:src="@drawable/ic_camera_black"
+                            android:src="@drawable/ic_show"
                             android:visibility="gone" />
 
 
@@ -183,6 +186,7 @@
                             android:layout_height="@dimen/_16sdp"
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
+                            android:onClick="@{(view)->handleClick.onViewClick(view)}"
                             android:layout_marginLeft="@dimen/_4sdp"
                             android:src="@drawable/ic_hide"
                             android:visibility="visible" />
@@ -195,7 +199,7 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerInParent="true"
                             android:layout_marginLeft="@dimen/_4sdp"
-                            android:src="@drawable/ic_camera_black"
+                            android:src="@drawable/ic_show"
                             android:visibility="gone" />
 
 

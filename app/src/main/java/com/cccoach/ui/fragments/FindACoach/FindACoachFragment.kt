@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.cccoach.R
 import com.cccoach.databinding.FragmentFindACoachBinding
+import com.cccoach.ui.activities.MainActivity
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.ui.extensions.replaceFragment
-import com.cccoach.ui.fragments.learner.coaches.CoachesFragment
+import com.cccoach.ui.fragments.Learner.coaches.CoachesFragment
 import com.cccoach.utils.HandleClickListener
 
 
@@ -27,8 +28,14 @@ class FindACoachFragment : BaseFragment(),HandleClickListener {
     }
 
     private fun initUI() {
-
         binding!!.handleClick=this
+        //Bottom navigation hide
+
+        (baseActivity as MainActivity).setIcon()
+        (baseActivity as MainActivity).setToolbar(
+            baseActivity!!.getString(R.string.ll),
+            isTitle = true, isToolbar = false, isBottom = false
+        )
     }
 
     override fun onViewClick(view: View) {

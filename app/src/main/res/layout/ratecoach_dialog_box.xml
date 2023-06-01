@@ -7,6 +7,7 @@
     android:background="@drawable/corner_round_rectangle">
 
     <LinearLayout
+        android:id="@+id/rateCoachLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -74,9 +75,11 @@
 
 
                 <LinearLayout
+                    android:id="@+id/rateCoachClickLL"
                     android:layout_width="@dimen/_120sdp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
                     android:padding="@dimen/_6ssp"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:background="@drawable/darkblue_rect">
@@ -85,7 +88,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"
-                        android:onClick="@{(view)->handleClick.onViewClick(view)}"
                         android:gravity="center"
                         android:fontFamily="@font/poppins_medium"
                         android:layout_gravity="center"

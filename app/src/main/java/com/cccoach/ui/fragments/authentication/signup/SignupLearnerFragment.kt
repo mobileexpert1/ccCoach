@@ -3,6 +3,8 @@ package com.cccoach.ui.fragments.authentication.signup
 import android.app.Dialog
 import android.os.Bundle
 import android.os.Handler
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +23,7 @@ import com.cccoach.utils.HandleClickListener
 
 class SignupLearnerFragment : BaseFragment(),HandleClickListener {
 
-
+    var passwordvisible = false
     var binding:FragmentSignupLearnerBinding?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,6 +75,52 @@ class SignupLearnerFragment : BaseFragment(),HandleClickListener {
                 baseActivity!!.replaceFragment(LoginFragment(), R.id.frame_container)
 
             }
+            R.id.backIV -> {
+                requireActivity().supportFragmentManager.popBackStack()
+            }
+
+
+            R.id.passwordsetEyeImv -> {
+
+                binding!!.passwordsetEyeImv.setOnClickListener(object : View.OnClickListener {
+                    override fun onClick(view: View?) {
+                        if (!passwordvisible) {
+                            binding!!.passwordET.setTransformationMethod(
+                                PasswordTransformationMethod.getInstance())
+                            passwordvisible = true
+                            binding!!.passwordET.setSelection(binding!!.passwordET.getText().length)
+                            binding!!.passwordsetEyeImv.setImageResource(R.drawable.ic_hide)
+                        } else {
+                            binding!!.passwordET.setTransformationMethod(
+                                HideReturnsTransformationMethod.getInstance())
+                            passwordvisible = false
+                            binding!!.passwordET.setSelection(binding!!.passwordET.getText().length)
+                            binding!!.passwordsetEyeImv.setImageResource(R.drawable.ic_show)
+                        }
+                    }
+                })
+            }
+            R.id.confirmpasswordsetEyeImv -> {
+
+                binding!!.confirmpasswordsetEyeImv.setOnClickListener(object : View.OnClickListener {
+                    override fun onClick(view: View?) {
+                        if (!passwordvisible) {
+                            binding!!.confirmpasswordET.setTransformationMethod(
+                                PasswordTransformationMethod.getInstance())
+                            passwordvisible = true
+                            binding!!.confirmpasswordET.setSelection(binding!!.confirmpasswordET.getText().length)
+                            binding!!.confirmpasswordsetEyeImv.setImageResource(R.drawable.ic_hide)
+                        } else {
+                            binding!!.confirmpasswordET.setTransformationMethod(
+                                HideReturnsTransformationMethod.getInstance())
+                            passwordvisible = false
+                            binding!!.confirmpasswordET.setSelection(binding!!.confirmpasswordET.getText().length)
+                            binding!!.confirmpasswordsetEyeImv.setImageResource(R.drawable.ic_show)
+                        }
+                    }
+                })
+            }
+
         }
     }
 }

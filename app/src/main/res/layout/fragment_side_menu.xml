@@ -150,6 +150,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_24sdp"
                 android:padding="@dimen/_5sdp"
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
                 android:src="@drawable/logout"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

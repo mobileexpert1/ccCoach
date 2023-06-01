@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/touchLL"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -26,7 +25,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/_30sdp"
                     android:layout_margin="@dimen/_10ssp"
                     android:orientation="vertical">
 
@@ -34,14 +32,27 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_alert">
+                        android:src="@drawable/ic_success">
                     </ImageView>
 
+                    <TextView
+                        android:id="@+id/tvGuestInstruction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clipToOutline="true"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:fontFamily="@font/poppins_medium"
+                        android:padding="@dimen/_8sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="@string/success"
+                        android:textSize="@dimen/_16sdp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/touch_id"
+                        android:text="@string/coach_notify_message"
                         android:layout_marginTop="@dimen/_10ssp"
                         android:gravity="center_horizontal"
                         android:fontFamily="@font/poppins_medium"
@@ -52,31 +63,26 @@
                     </TextView>
 
 
-                        <LinearLayout
-                            android:id="@+id/contiuneLL"
-                            android:layout_width="@dimen/_90sdp"
+                    <LinearLayout
+                        android:id="@+id/contiuneLL"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_6ssp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@drawable/darkblue_rect">
+                        <TextView
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppins_medium"
                             android:layout_gravity="center"
-                            android:padding="@dimen/_6ssp"
-                            android:layout_marginTop="@dimen/_15sdp"
-                            android:background="@drawable/darkblue_rect">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/white"
-                                android:gravity="center"
-                                android:fontFamily="@font/poppins_medium"
-                                android:layout_gravity="center"
-                                android:textSize="@dimen/_12sdp"
-                                android:text="@string/continu">
+                            android:textSize="@dimen/_12sdp"
+                            android:text="@string/Home">
 
-                            </TextView>
-                        </LinearLayout>
-
-
-
-
-
+                        </TextView>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

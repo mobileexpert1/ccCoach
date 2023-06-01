@@ -76,8 +76,7 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="success">Success !</string>
     <string name="create_successfully">Your account has been created successfully </string>
-    <string name="touch_id"> No Touch ID/ Passcode</string>
-    <string name="touch_passcode">is available</string>
+    <string name="touch_id"> No Touch ID/ Passcode is available</string>
     <string name="volunteer">Volunteer</string>
     <string name="paid">Paid</string>
     <string name="closed_ticket">Closed Ticket</string>
@@ -189,7 +188,9 @@
     <string name="ratecoach"> Rate Coach  </string>
 
     <string name="save"> Save  </string>
+    <string name="Home"> Home  </string>
     <string name="write_review">Write review</string>
+    <string name="coach_notify_message">Coach has been notified of your appointment request. Please hold off for the coach\'s confirmation.</string>
 
 
 </resources>

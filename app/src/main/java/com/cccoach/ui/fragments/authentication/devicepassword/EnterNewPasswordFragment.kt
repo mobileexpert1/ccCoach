@@ -2,8 +2,6 @@ package com.cccoach.ui.fragments.devicepassword
 
 import android.app.Dialog
 import android.os.Bundle
-import android.os.Handler
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +12,7 @@ import com.cccoach.databinding.FragmentForgotPasswordBinding
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.ui.extensions.replaceFragment
 import com.cccoach.ui.fragments.authentication.login.LoginFragment
-import com.cccoach.ui.fragments.learner.home.HomeFragment
+import com.cccoach.ui.fragments.Learner.home.HomeFragment
 import com.cccoach.utils.Const
 import com.cccoach.utils.HandleClickListener
 
@@ -47,7 +45,6 @@ class EnterNewPasswordFragment : BaseFragment(),HandleClickListener{
                 dialogLL.setOnClickListener {
                     dialog.dismiss()
                 }
-
                 val contiuneLinearLayout = dialog.findViewById(R.id.contiuneLL) as LinearLayout
                 contiuneLinearLayout.setOnClickListener {
                     baseActivity!!.gotMainActivity()

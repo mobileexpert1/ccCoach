@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cccoach.R
 import com.cccoach.databinding.FragmentProfileBinding
+import com.cccoach.ui.activities.MainActivity
 import com.cccoach.ui.adapter.learner.CoachAdapter
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.utils.HandleClickListener
@@ -38,6 +39,13 @@ class ProfileFragment :BaseFragment(),HandleClickListener,CoachAdapter.ClickList
     private fun initUI() {
 
         binding!!.handleClick=this
+
+        //Bottom navigation hide
+        (baseActivity as MainActivity).setIcon()
+        (baseActivity as MainActivity).setToolbar(
+            baseActivity!!.getString(R.string.ll),
+            isTitle = true, isToolbar = false, isBottom = false
+        )
         val postBookingRCv = binding!!.postBookingRCv
         val coachAdapter = CoachAdapter(requireContext(),this)
         val linearLayoutManager = LinearLayoutManager(context)
@@ -80,7 +88,18 @@ class ProfileFragment :BaseFragment(),HandleClickListener,CoachAdapter.ClickList
     }
 
     override fun onclick(position: Int) {
-        TODO("Not yet implemented")
+        val dialog = BottomSheetDialog(requireContext(), R.style.CustomBottomSheetDialogTheme)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.average_ratings_bottom_sheet)
+        dialog.show()
+        val window = dialog.window
+        window!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00FFFFFF")))
+        window.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.MATCH_PARENT
+        )
+        window.setGravity(Gravity.BOTTOM)
+
     }
 
 

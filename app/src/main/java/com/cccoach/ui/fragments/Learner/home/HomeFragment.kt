@@ -1,10 +1,12 @@
-package com.cccoach.ui.fragments.learner.home
+package com.cccoach.ui.fragments.Learner.home
 
+import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cccoach.R
 import com.cccoach.databinding.FragmentHomeBinding
@@ -108,7 +110,19 @@ class HomeFragment : BaseFragment(), HandleClickListener,CoachAdapter.ClickListe
             ViewGroup.LayoutParams.MATCH_PARENT,
             LinearLayout.LayoutParams.MATCH_PARENT
         )
-        window.setGravity(Gravity.BOTTOM)
+        val rateLL = dialog.findViewById<LinearLayout>(R.id.bottomsheetRateLL)
+        rateLL!!.setOnClickListener {
+
+            val dialogRate = Dialog(baseActivity!!,R.style.CustomBottomSheetDialogTheme)
+            dialogRate.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialogRate.setCancelable(true)
+            dialogRate.setContentView(R.layout.ratecoach_dialog_box)
+            val rateLinearLayout = dialogRate.findViewById<LinearLayout>(R.id.rateCoachClickLL)
+            rateLinearLayout.setOnClickListener {
+                dialogRate.dismiss()
+            }
+            dialogRate.show()
+        }
 
     }
 
