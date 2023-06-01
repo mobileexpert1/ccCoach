@@ -1,13 +1,13 @@
 package com.cccoach.model.slotdata
 
-import android.os.Parcelable
-import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+//import android.os.Parcelable
+//import com.google.gson.annotations.SerializedName
+//import kotlinx.android.parcel.Parcelize
 
-@Parcelize
+//@Parcelize
 data class SlotData(
 
-    @field:SerializedName("createdAt")
+   /* @field:SerializedName("createdAt")
     val createdAt: String? = "",
 
     @field:SerializedName("stateId")
@@ -26,8 +26,11 @@ data class SlotData(
 
     @field:SerializedName("uptoTime")
     val uptoTime: String? = "",
+*/
+//   @field:SerializedName("slotTimes")
+    val slotTimes: String? = "",
 
-    @field:SerializedName("typeId")
+   /* @field:SerializedName("typeId")
     val typeId: Int? = 0,
 
     @field:SerializedName("_id")
@@ -37,8 +40,8 @@ data class SlotData(
     val userId: String? = "",
 
     @field:SerializedName("updatedAt")
-    val updatedAt: String? = "",
+    val updatedAt: String? = "",*/
 
-    var isChecked: Boolean = false,
+//    var isChecked: Boolean = false,
 
-    ) : Parcelable
+    ) //: Parcelable

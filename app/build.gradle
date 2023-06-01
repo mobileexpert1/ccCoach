@@ -33,12 +33,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dataBinding {
-        enabled = true
+//    dataBinding {
+//        enabled = true
+//    }
+
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
     }
-
-
-
 }
 
 dependencies {
@@ -80,6 +83,8 @@ dependencies {
 
 //    viewpager indicators
     implementation 'com.github.zhpanvip:viewpagerindicator:1.2.2'
+
+
 
 
 }

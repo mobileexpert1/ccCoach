@@ -5,22 +5,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.cccoach.R
 import com.cccoach.databinding.FragmentTimeBookingBinding
+import com.cccoach.model.slotdata.SlotData
 import com.cccoach.ui.adapter.availabilityslots.AvailabilitySlotsAdapter
 import com.cccoach.ui.base.BaseAdapter
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.utils.Const
+import com.cccoach.utils.HandleClickListener
 
-class TimeBookingFragment : BaseFragment(), BaseAdapter.OnItemClickListener {
+class TimeBookingFragment : BaseFragment(), BaseAdapter.OnItemClickListener, HandleClickListener {
 
 
     var binding:FragmentTimeBookingBinding?=null
     private var slotsAdapter: AvailabilitySlotsAdapter? = null
-
+    var slotsListData: ArrayList<SlotData>?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
+
         }
     }
 
@@ -35,7 +39,8 @@ class TimeBookingFragment : BaseFragment(), BaseAdapter.OnItemClickListener {
     }
 
     private fun initUI() {
-//        binding!!.handleClick = this
+        binding!!.handleClick = this
+        slotsListData=ArrayList<SlotData>()
         setSlotsAdapter()
     }
 
@@ -45,14 +50,12 @@ class TimeBookingFragment : BaseFragment(), BaseAdapter.OnItemClickListener {
 
     @SuppressLint("NotifyDataSetChanged")
     fun setSlotsAdapter() {
-//        slotsAdapter = AvailabilitySlotsAdapter(baseActivity!!, slotsViewModel!!.slotsList)
-//        binding?.slotsRV?.adapter = slotsAdapter
-//        slotsAdapter!!.setOnItemClickListener(this)
-
-    }
-
-
-    companion object {
+        for (i in 0 until 10) {
+            slotsListData!!.add(SlotData("9:00 AM-11:00 PM"))
+        }
+        slotsAdapter = AvailabilitySlotsAdapter(baseActivity!!, slotsListData!!)
+        binding?.slotsRV?.adapter = slotsAdapter
+        slotsAdapter!!.setOnItemClickListener(this)
 
     }
 
@@ -62,6 +65,7 @@ class TimeBookingFragment : BaseFragment(), BaseAdapter.OnItemClickListener {
             val pos = itemData[0] as Int
             when (type) {
                 Const.Slots.SELECT_SLOTS -> {
+                    slotsAdapter!!.notifyItemChanged(pos)
 
                 }
 
@@ -70,5 +74,21 @@ class TimeBookingFragment : BaseFragment(), BaseAdapter.OnItemClickListener {
         }
 
     }
+
+    override fun onViewClick(view: View) {
+
+
+    }
+
+
+
+
+    companion object {
+
+    }
+
+
+
+
 
 }

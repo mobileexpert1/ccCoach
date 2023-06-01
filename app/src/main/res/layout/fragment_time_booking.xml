@@ -9,7 +9,6 @@
             type="com.cccoach.utils.HandleClickListener" />
     </data>
 
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -40,7 +39,7 @@
                 android:layout_marginTop="@dimen/_30sdp"
                 />
 
-             <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
+            <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
                  android:id="@+id/rowCalendarSRC"
                  android:layout_below="@+id/header_titleTV"
                  android:layout_width="match_parent"
@@ -78,7 +77,6 @@
                 app:layout_constraintStart_toEndOf="@+id/tvDate"
                 app:layout_constraintTop_toTopOf="@+id/tvDate" />
 
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/slotsRV"
                 android:layout_width="match_parent"
@@ -88,9 +86,8 @@
                 android:layout_below="@+id/tvDay"
                 android:overScrollMode="never"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="3"
+                app:spanCount="2"
                 tools:listitem="@layout/adapter_availability_slots" />
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -114,15 +111,9 @@
                     android:textSize="@dimen/_13ssp"
                     />
 
-
             </LinearLayout>
 
-
         </RelativeLayout>
-
-
-
-
 
     </androidx.core.widget.NestedScrollView>
 

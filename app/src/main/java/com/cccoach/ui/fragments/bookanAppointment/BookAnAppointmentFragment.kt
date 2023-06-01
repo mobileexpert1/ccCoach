@@ -9,6 +9,8 @@ import com.cccoach.R
 import com.cccoach.databinding.FragmentBookAnAppointmentBinding
 import com.cccoach.ui.adapter.ReviewAdapter.ReviewOfAppointmentAdapter
 import com.cccoach.ui.base.BaseFragment
+import com.cccoach.ui.extensions.replaceFragment
+import com.cccoach.ui.fragments.timebooking.TimeBookingFragment
 import com.cccoach.utils.HandleClickListener
 
 
@@ -39,6 +41,11 @@ class BookAnAppointmentFragment : BaseFragment(),HandleClickListener{
             R.id.backIV -> {
                 requireActivity().supportFragmentManager.popBackStack()
             }
+            R.id.bookAppointmentACTV -> {
+                baseActivity!!.replaceFragment(TimeBookingFragment(), R.id.frame_container)
+
+            }
+
 
         }
     }
