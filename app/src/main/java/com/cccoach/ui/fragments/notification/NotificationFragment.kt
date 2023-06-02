@@ -19,7 +19,7 @@ class NotificationFragment :BaseFragment(),HandleClickListener{
    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         if (binding == null)
             binding = FragmentNotificationBinding.inflate(inflater, container, false)
         initUI()
