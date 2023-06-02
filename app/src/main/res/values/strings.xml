@@ -191,5 +191,16 @@
     <string name="save"> Save  </string>
     <string name="write_review">Write review</string>
 
+    <string name="calendar_sunday">Sun</string>
+    <string name="calendar_monday">Mon</string>
+    <string name="calendar_tuesday">Tue</string>
+    <string name="calendar_wednesday">Wed</string>
+    <string name="calendar_thursday">Thu</string>
+    <string name="calendar_friday">Fri</string>
+    <string name="calendar_saturday">Sat</string>
+    <string name="search_appointments">Search Appointments</string>
+    <string name="not_available">Not Available</string>
+<!--    <string name="save">Save</string>-->
+
 
 </resources>

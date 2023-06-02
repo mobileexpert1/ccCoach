@@ -81,5 +81,11 @@ dependencies {
 //    viewpager indicators
     implementation 'com.github.zhpanvip:viewpagerindicator:1.2.2'
 
+    // The view calendar library
+    implementation 'com.kizitonwose.calendar:view:2.3.0'
+
+    //    balloon- alert on click
+    implementation "com.github.skydoves:balloon:1.5.3"
+
 
 }
