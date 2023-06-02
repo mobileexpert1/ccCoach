@@ -38,8 +38,6 @@ class NotificationFragment :BaseFragment(),HandleClickListener{
     }
 
 
-
-
     companion object {
 
     }
