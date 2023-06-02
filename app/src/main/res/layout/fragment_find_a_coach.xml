@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="handleClick"
@@ -275,7 +277,7 @@
             </TextView>
 
 
-            <LinearLayout
+         <!--   <LinearLayout
                 android:id="@+id/timingOneLL"
                 android:layout_below="@+id/selectedTimeRangeTV"
                 android:layout_width="match_parent"
@@ -547,7 +549,18 @@
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
             </LinearLayout>
-
+-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/slotsRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:nestedScrollingEnabled="false"
+                android:layout_below="@+id/selectedTimeRangeTV"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/adapter_availability_slots" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -556,7 +569,7 @@
                 android:layout_marginTop="@dimen/_14ssp"
                 android:layout_marginLeft="@dimen/_10ssp"
                 android:layout_marginRight="@dimen/_10ssp"
-                android:layout_below="@+id/timingSixLL">
+                android:layout_below="@+id/slotsRV">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/findCoachesTV"

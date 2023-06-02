@@ -11,6 +11,7 @@ import com.cccoach.model.slotdata.SlotData
 import com.cccoach.ui.adapter.availabilityslots.AvailabilitySlotsAdapter
 import com.cccoach.ui.base.BaseAdapter
 import com.cccoach.ui.base.BaseFragment
+import com.cccoach.ui.extensions.replaceFragment
 import com.cccoach.utils.Const
 import com.cccoach.utils.HandleClickListener
 
@@ -50,9 +51,20 @@ class TimeBookingFragment : BaseFragment(), BaseAdapter.OnItemClickListener, Han
 
     @SuppressLint("NotifyDataSetChanged")
     fun setSlotsAdapter() {
-        for (i in 0 until 10) {
+        /*for (i in 0 until 10) {
             slotsListData!!.add(SlotData("9:00 AM-11:00 PM"))
-        }
+        }*/
+        slotsListData!!.add(SlotData("8:00 AM-9:00 AM"))
+        slotsListData!!.add(SlotData("9:00 AM-10:00 AM"))
+        slotsListData!!.add(SlotData("10:00 AM-11:00 AM"))
+        slotsListData!!.add(SlotData("11:00 AM-12:00 PM"))
+        slotsListData!!.add(SlotData("12:00 PM-1:00 PM"))
+        slotsListData!!.add(SlotData("1:00 PM-2:00 PM"))
+        slotsListData!!.add(SlotData("2:00 PM-3:00 PM"))
+        slotsListData!!.add(SlotData("3:00 PM-4:00 PM"))
+        slotsListData!!.add(SlotData("4:00 PM-5:00 PM"))
+        slotsListData!!.add(SlotData("5:00 PM-6:00 PM"))
+        slotsListData!!.add(SlotData("6:00 PM-7:00 PM"))
         slotsAdapter = AvailabilitySlotsAdapter(baseActivity!!, slotsListData!!)
         binding?.slotsRV?.adapter = slotsAdapter
         slotsAdapter!!.setOnItemClickListener(this)
@@ -76,7 +88,13 @@ class TimeBookingFragment : BaseFragment(), BaseAdapter.OnItemClickListener, Han
     }
 
     override fun onViewClick(view: View) {
+        when (view.id) {
+            R.id.backIV -> {
+                requireActivity().supportFragmentManager.popBackStack()
+            }
 
+
+        }
 
     }
 

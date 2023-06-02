@@ -24,6 +24,7 @@
                 android:id="@+id/backIV"
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="@dimen/_25sdp"
+                android:onClick="@{(view)->handleClick.onViewClick(view)}"
                 android:layout_alignParentTop="true"
                 android:src="@drawable/ic_back" />
 
