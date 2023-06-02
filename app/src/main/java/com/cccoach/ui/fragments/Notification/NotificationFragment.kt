@@ -36,6 +36,7 @@ class NotificationFragment :BaseFragment(),HandleClickListener{
         binding!!.notificationRCV.layoutManager = linearLayoutManager
     }
 
+
     override fun onViewClick(view: View) {
         when (view.id) {
             R.id.ivBackpress->{
