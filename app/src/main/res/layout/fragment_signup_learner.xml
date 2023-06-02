@@ -72,9 +72,9 @@
 
 
                     <EditText
+                        android:id="@+id/learnerNameET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
@@ -89,9 +89,9 @@
 
 
                     <EditText
+                        android:id="@+id/signupLearnerEmailET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
@@ -115,7 +115,7 @@
 
 
                         <EditText
-                            android:id="@+id/passwordET"
+                            android:id="@+id/signupLearnerPasswordET"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_8sdp"
@@ -166,7 +166,7 @@
 
 
                         <EditText
-                            android:id="@+id/confirmpasswordET"
+                            android:id="@+id/signupLearnerconfirmpasswordET"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_8sdp"
@@ -207,9 +207,9 @@
 
 
                     <EditText
+                        android:id="@+id/sigupLearnerCountryET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
@@ -223,9 +223,9 @@
                         android:textSize="@dimen/_13ssp" />
 
                     <EditText
+                        android:id="@+id/signupLearnerAddressET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
@@ -239,15 +239,15 @@
                         android:textSize="@dimen/_13ssp" />
 
                     <EditText
+                        android:id="@+id/signupLearnerDobET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="@string/DOB"
                         android:imeOptions="actionNext"
-                        android:inputType="textEmailAddress"
+                        android:inputType="number"
                         android:paddingHorizontal="@dimen/_13sdp"
                         android:paddingVertical="@dimen/_11sdp"
                         android:singleLine="true"
@@ -263,31 +263,22 @@
 
                         <RadioButton
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        </RadioButton>
-
-                        <TextView
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/_13ssp"
-                            android:fontFamily="@font/poppins_medium"
-                            android:text="@string/nsw_driver_licenece_number"
-                            android:textColor="@color/black">
-
-                        </TextView>
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/nsw_driver_licenece_number"/>
 
                     </LinearLayout>
 
                     <EditText
+                        android:id="@+id/signupLearnerLicenceNumET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
                         android:imeOptions="actionNext"
-                        android:inputType="textEmailAddress"
+                        android:inputType="number"
                         android:paddingHorizontal="@dimen/_13sdp"
                         android:paddingVertical="@dimen/_11sdp"
                         android:singleLine="true"
@@ -303,19 +294,11 @@
                         android:orientation="horizontal">
 
                         <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        </RadioButton>
-
-                        <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/_13ssp"
+                            android:textSize="@dimen/_12ssp"
                             android:text="@string/Atsi"
-                            android:textColor="@color/black">
-
-                        </TextView>
+                            android:fontFamily="@font/poppins_regular"/>
 
                     </LinearLayout>
 
@@ -326,21 +309,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_11sdp"
                         android:orientation="horizontal">
-
                         <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        </RadioButton>
-
-                        <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/_13ssp"
                             android:text="@string/i_agree"
-                            android:textColor="@color/black">
-
-                        </TextView>
+                            android:fontFamily="@font/poppins_regular"/>
 
                     </LinearLayout>
 
@@ -388,11 +362,12 @@
                                 android:textColor="@color/Black"
                                 android:textSize="@dimen/_10ssp" />
                             <TextView
-                                android:id="@+id/loginTV"
+                                android:id="@+id/learnerLoginTV"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/red_btn"
                                 android:textSize="@dimen/_10ssp"
+                                android:onClick="@{(view)->handleClick.onViewClick(view)}"
                                 android:layout_marginTop="-3dp"
                                 android:layout_marginLeft="@dimen/_2sdp"
                                 android:textStyle="bold"

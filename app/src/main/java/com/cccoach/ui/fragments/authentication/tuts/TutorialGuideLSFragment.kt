@@ -42,7 +42,6 @@ class TutorialGuideLSFragment : BaseFragment(), HandleClickListener {
         binding!!.handleClick = this
     }
 
-
     private fun signuptutsFragment() {
         baseActivity!!.replaceFragment(TutorialGuideSignupsFragment(), R.id.frame_container)
     }
@@ -51,8 +50,6 @@ class TutorialGuideLSFragment : BaseFragment(), HandleClickListener {
         baseActivity!!.replaceFragment(LoginFragment(), R.id.frame_container)
 
     }
-
-
     companion object {
 
     }

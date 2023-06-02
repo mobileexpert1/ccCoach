@@ -56,20 +56,44 @@ class SignupLearnerFragment : BaseFragment(),HandleClickListener {
     override fun onViewClick(view: View) {
         when (view.id) {
             R.id.continueAsaLearnerTV -> {
-                var dialog = Dialog(baseActivity!!,R.style.CustomBottomSheetDialogTheme)
-                dialog.setCancelable(true)
-                dialog.setContentView(R.layout.create_account_successfully_popup)
-                val dialogLL = dialog.findViewById(R.id.dialogLL) as LinearLayout
-                dialogLL.setOnClickListener {
-                    dialog.dismiss()
-                }
-                dialog.show()
-                val handler = Handler()
-                handler.postDelayed({
-                    dialog.dismiss()
-                    baseActivity!!.replaceFragment(LoginFragment(), R.id.frame_container)
-                }, Const.SPLASH_TIMEOUT.toLong())
+                if (binding!!.learnerNameET.text!!.isEmpty()) {
+                    showShortToast("Please enter Name.")
+                }else if (binding!!.signupLearnerEmailET.text!!.isEmpty()){
+                    showShortToast("Please enter Email.")
+                } else if (!isEmailValid(binding!!.signupLearnerEmailET.text.toString())) {
+                    showShortToast("Please enter valid email.")
+                } else if (binding!!.signupLearnerPasswordET.text!!.isEmpty()) {
+                    showShortToast("Please enter password.")
+                }/*else if (!isValidPassword(binding!!.signupLearnerPasswordET.text.toString())) {
+                    showShortToast("Please enter valid password")
+                }*/ else if (binding!!.signupLearnerconfirmpasswordET.text!!.isEmpty()) {
+                    showShortToast("Please enter confirm password.")
+                } /*else if (!isValidPassword(binding!!.signupLearnerconfirmpasswordET.text.toString())) {
+                    showShortToast("Please enter valid confirm password")
+                }*/else if (binding!!.sigupLearnerCountryET.text!!.isEmpty()){
+                    showShortToast("Please enter country.")
+                }else if (binding!!.signupLearnerAddressET.text!!.isEmpty()){
+                    showShortToast("Please enter address.")
+                }else if (binding!!.signupLearnerDobET.text.isEmpty()){
+                    showShortToast("Please enter DOB.")
+                }else if (binding!!.signupLearnerLicenceNumET.text.isEmpty()){
+                    showShortToast("Please enter Nsw driver's licence number.")
+                }else {
 
+                    var dialog = Dialog(baseActivity!!, R.style.CustomBottomSheetDialogTheme)
+                    dialog.setCancelable(true)
+                    dialog.setContentView(R.layout.create_account_successfully_popup)
+                    val dialogLL = dialog.findViewById(R.id.dialogLL) as LinearLayout
+                    dialogLL.setOnClickListener {
+                        dialog.dismiss()
+                    }
+                    dialog.show()
+                    val handler = Handler()
+                    handler.postDelayed({
+                        dialog.dismiss()
+                        baseActivity!!.replaceFragment(LoginFragment(), R.id.frame_container)
+                    }, Const.SPLASH_TIMEOUT.toLong())
+                }
             }
             R.id.loginTV -> {
                 baseActivity!!.replaceFragment(LoginFragment(), R.id.frame_container)
@@ -85,16 +109,16 @@ class SignupLearnerFragment : BaseFragment(),HandleClickListener {
                 binding!!.passwordsetEyeImv.setOnClickListener(object : View.OnClickListener {
                     override fun onClick(view: View?) {
                         if (!passwordvisible) {
-                            binding!!.passwordET.setTransformationMethod(
+                            binding!!.signupLearnerPasswordET.setTransformationMethod(
                                 PasswordTransformationMethod.getInstance())
                             passwordvisible = true
-                            binding!!.passwordET.setSelection(binding!!.passwordET.getText().length)
+                            binding!!.signupLearnerPasswordET.setSelection(binding!!.signupLearnerPasswordET.getText().length)
                             binding!!.passwordsetEyeImv.setImageResource(R.drawable.ic_hide)
                         } else {
-                            binding!!.passwordET.setTransformationMethod(
+                            binding!!.signupLearnerPasswordET.setTransformationMethod(
                                 HideReturnsTransformationMethod.getInstance())
                             passwordvisible = false
-                            binding!!.passwordET.setSelection(binding!!.passwordET.getText().length)
+                            binding!!.signupLearnerPasswordET.setSelection(binding!!.signupLearnerPasswordET.getText().length)
                             binding!!.passwordsetEyeImv.setImageResource(R.drawable.ic_show)
                         }
                     }
@@ -105,20 +129,24 @@ class SignupLearnerFragment : BaseFragment(),HandleClickListener {
                 binding!!.confirmpasswordsetEyeImv.setOnClickListener(object : View.OnClickListener {
                     override fun onClick(view: View?) {
                         if (!passwordvisible) {
-                            binding!!.confirmpasswordET.setTransformationMethod(
+                            binding!!.signupLearnerconfirmpasswordET.setTransformationMethod(
                                 PasswordTransformationMethod.getInstance())
                             passwordvisible = true
-                            binding!!.confirmpasswordET.setSelection(binding!!.confirmpasswordET.getText().length)
+                            binding!!.signupLearnerconfirmpasswordET.setSelection(binding!!.signupLearnerconfirmpasswordET.getText().length)
                             binding!!.confirmpasswordsetEyeImv.setImageResource(R.drawable.ic_hide)
                         } else {
-                            binding!!.confirmpasswordET.setTransformationMethod(
+                            binding!!.signupLearnerconfirmpasswordET.setTransformationMethod(
                                 HideReturnsTransformationMethod.getInstance())
                             passwordvisible = false
-                            binding!!.confirmpasswordET.setSelection(binding!!.confirmpasswordET.getText().length)
+                            binding!!.signupLearnerconfirmpasswordET.setSelection(binding!!.signupLearnerconfirmpasswordET.getText().length)
                             binding!!.confirmpasswordsetEyeImv.setImageResource(R.drawable.ic_show)
                         }
                     }
                 })
+            }
+
+            R.id.learnerLoginTV -> {
+                baseActivity!!.replaceFragment(LoginFragment(), R.id.frame_container)
             }
 
         }

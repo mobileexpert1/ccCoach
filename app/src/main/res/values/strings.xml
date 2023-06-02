@@ -45,8 +45,8 @@
     <string name="create_new_ticket"> +Create New Ticket </string>
     <string name="nsw_driver_licenece_number">NSW Driver\'s Licence Number</string>
     <string name="address">Address</string>
-    <string name="Atsi">ATSI (Aboriginal and Torres Strait Islander\n Identification)</string>
-    <string name="i_agree">I agree with the  Terms Conditions &amp;\n Privacy Policy</string>
+    <string name="Atsi">ATSI (Aboriginal and Torres Strait Islander Identification)</string>
+    <string name="i_agree">I agree with the  Terms Conditions &amp; Privacy Policy</string>
     <string name="name">Name</string>
     <string name="enter_new_password">Enter new password</string>
     <string name="resend_otp">Resend OTP</string>

@@ -30,6 +30,7 @@
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:layout_gravity="left"
+                    android:visibility="invisible"
                     android:onClick="@{(view)->handleClick.onViewClick(view)}"
                     android:layout_weight="1"
                     android:paddingHorizontal="@dimen/_3sdp"

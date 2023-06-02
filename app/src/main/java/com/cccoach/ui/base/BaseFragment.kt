@@ -8,12 +8,15 @@ import android.view.Window
 import android.widget.AdapterView
 import android.widget.CompoundButton
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.cccoach.R
 import com.cccoach.ui.snackBar.Snackbar
 import com.cccoach.ui.snackBar.SnackbarManager
 import com.cccoach.ui.snackBar.SnackbarType
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 open class BaseFragment : Fragment(), AdapterView.OnItemClickListener, View.OnClickListener,
     AdapterView.OnItemSelectedListener, CompoundButton.OnCheckedChangeListener
@@ -59,6 +62,17 @@ open class BaseFragment : Fragment(), AdapterView.OnItemClickListener, View.OnCl
         }
 
 
+        fun isEmailValid(email: String?): Boolean {
+            val pattern: Pattern
+            val matcher: Matcher
+            val EMAIL_PATTERN =
+                "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
+            pattern = Pattern.compile(EMAIL_PATTERN)
+            matcher = pattern.matcher(email)
+            return matcher.matches()
+        }
+
+
          fun showDialog() {
             var dialog = Dialog(baseActivity!!,R.style.CustomBottomSheetDialogTheme)
             dialog.setCancelable(true)
@@ -75,6 +89,8 @@ open class BaseFragment : Fragment(), AdapterView.OnItemClickListener, View.OnCl
     fun showToast(msg: String) {
         baseActivity!!.showToast(msg)
     }
+
+
 
     fun showToastOne(s: String) {
         baseActivity!!.showToastOne(s)
@@ -103,6 +119,30 @@ open class BaseFragment : Fragment(), AdapterView.OnItemClickListener, View.OnCl
     override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
 
     }
+
+        fun showShortToast(message: String) {
+            if (!isAdded) {
+                return
+            }
+            Toast.makeText(
+                requireContext(), message, Toast.LENGTH_SHORT
+            ).show()
+        }
+        fun isValidPassword(password: String?): Boolean {
+
+            val pattern: Pattern
+            val matcher: Matcher
+            val PASSWORD_PATTERN = "^" +
+                    "(?=.*[@#$%^&+=])" +  // at least 1 special character
+                    "(?=\\S+$)" +  // no white spaces
+                    ".{8,}" +  // at least 8 characters
+                    "$"
+            pattern = Pattern.compile(PASSWORD_PATTERN)
+            matcher = pattern.matcher(password)
+            return matcher.matches()
+        }
+
+
 
     /*fun chooseImagePicker(requestCode: Int, showRemove: Boolean) {
         val bottomPicker = ImageBottomPicker.Builder(baseActivity!!, requestCode)

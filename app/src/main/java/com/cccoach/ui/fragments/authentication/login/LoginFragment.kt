@@ -21,16 +21,10 @@ class LoginFragment : BaseFragment(),HandleClickListener {
 
     var binding:FragmentLoginBinding?=null
     private var loginViewModel:LoginViewModel? = null
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
         }
-
     }
 
     override fun onCreateView(
@@ -53,14 +47,11 @@ class LoginFragment : BaseFragment(),HandleClickListener {
             R.color.red_btn, showBold = true){
             baseActivity!!.replaceFragment(TutorialGuideSignupsFragment(), R.id.frame_container)
         }
-
     }
 
     companion object {
         var loginFragment:LoginFragment?=null
     }
-
-
 
     private fun signuptutsFragment() {
         baseActivity!!.replaceFragment(TutorialGuideSignupsFragment(), R.id.frame_container)
@@ -73,7 +64,16 @@ class LoginFragment : BaseFragment(),HandleClickListener {
 
         when (view.id) {
             R.id.continueAccountTV -> {
-                baseActivity!!.gotMainActivity()
+
+                if (binding!!.emailET.text!!.isEmpty()) {
+                    showShortToast("Please enter email.")
+                } else if (!isEmailValid(binding!!.emailET.text.toString())) {
+                    showShortToast("Please enter valid email.")
+                } else if (binding!!.passwordET.text!!.isEmpty()) {
+                    showShortToast("Please enter password.")
+                }else {
+                    baseActivity!!.gotMainActivity()
+                }
             }
             R.id.signupTV -> {
                 signuptutsFragment()

@@ -40,7 +40,13 @@ class ForgotPasswordFragment :BaseFragment(),HandleClickListener {
     override fun onViewClick(view: View) {
         when (view.id) {
             R.id.forgotcontinueTV -> {
-                gotoVerificationFragment()
+                if (binding!!.forgotEmailET.text!!.isEmpty()){
+                    showShortToast("Please enter email.")
+                }else if (!isEmailValid(binding!!.forgotEmailET.text.toString())) {
+                    showShortToast("Please enter valid email.")
+                } else{
+                    gotoVerificationFragment()
+                }
             }
             R.id.backIV->{
                 requireActivity().supportFragmentManager.popBackStack()

@@ -65,6 +65,7 @@
                     android:layout_marginTop="@dimen/_100sdp"
                     android:textColor="@color/black"
                     app:bar_enabled="true"
+                    android:onClick="@{(view)->handleClick.onViewClick(view)}"
                     android:layout_centerInParent="true"
                     app:bar_active_color="@color/grey"
                     app:bar_height="2dp"

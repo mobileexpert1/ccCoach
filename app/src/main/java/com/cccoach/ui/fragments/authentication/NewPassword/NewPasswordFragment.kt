@@ -11,7 +11,6 @@ import com.cccoach.ui.extensions.replaceFragment
 import com.cccoach.ui.fragments.devicepassword.EnterNewPasswordFragment
 import com.cccoach.utils.HandleClickListener
 
-
 class NewPasswordFragment :BaseFragment(),HandleClickListener{
 
     var binding:FragmentNewPasswordBinding?=null
@@ -37,12 +36,17 @@ class NewPasswordFragment :BaseFragment(),HandleClickListener{
     override fun onViewClick(view: View) {
         when (view.id) {
             R.id.newPaswrdcontinueTV -> {
-                gotoenterdevicePassword()
+                if (binding!!.enternewpasswordET.text!!.isEmpty()){
+                    showShortToast("Please enter new password.")
+                }else if (binding!!.confirmPasswordET.text!!.isEmpty()){
+                    showShortToast("Please enter confirm password.")
+                }else{
+                    gotoenterdevicePassword()
+                }
             }
             R.id.backIV->{
                 requireActivity().supportFragmentManager.popBackStack()
             }
-
         }
     }
 

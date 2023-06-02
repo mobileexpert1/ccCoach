@@ -66,6 +66,7 @@
 
 
                     <EditText
+                        android:id="@+id/nameET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/signTV"
@@ -83,9 +84,9 @@
 
 
                     <EditText
+                        android:id="@+id/signupCoachEmailET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
@@ -109,7 +110,7 @@
 
 
                         <EditText
-                            android:id="@+id/passwordET"
+                            android:id="@+id/signupCoachPasswordET"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_8sdp"
@@ -160,7 +161,7 @@
 
 
                         <EditText
-                            android:id="@+id/confirmpasswordET"
+                            android:id="@+id/signupCoachconfirmpasswordET"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_8sdp"
@@ -202,9 +203,9 @@
 
 
                     <EditText
+                        android:id="@+id/sigupCoachCountryET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
@@ -218,9 +219,9 @@
                         android:textSize="@dimen/_13ssp" />
 
                     <EditText
+                        android:id="@+id/signupCoachAddressET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
@@ -236,15 +237,15 @@
 
 
                     <EditText
+                        android:id="@+id/signupDobET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_15sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="@string/DOB"
                         android:imeOptions="actionNext"
-                        android:inputType="textEmailAddress"
+                        android:inputType="number"
                         android:paddingHorizontal="@dimen/_13sdp"
                         android:paddingVertical="@dimen/_11sdp"
                         android:singleLine="true"
@@ -259,33 +260,24 @@
                         android:orientation="horizontal">
 
                         <RadioButton
-                            android:layout_width="@dimen/_20sdp"
-                            android:layout_height="@dimen/_20sdp">
-
-                        </RadioButton>
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/_12ssp"
-                            android:text="@string/wwc_number"
-                            android:fontFamily="@font/poppins_medium"
-                            android:layout_marginLeft="@dimen/_6sdp"
-                            android:textColor="@color/black">
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/wwc_number"/>
 
-                        </TextView>
 
                     </LinearLayout>
 
                     <EditText
+                        android:id="@+id/signupCoachWWCET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
                         android:imeOptions="actionNext"
-                        android:inputType="textEmailAddress"
+                        android:inputType="number"
                         android:paddingHorizontal="@dimen/_13sdp"
                         android:paddingVertical="@dimen/_11sdp"
                         android:singleLine="true"
@@ -300,39 +292,28 @@
                         android:orientation="horizontal">
 
                         <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        </RadioButton>
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/_13ssp"
-                            android:fontFamily="@font/poppins_medium"
-                            android:text="@string/nsw_driver_licenece_number"
-                            android:textColor="@color/black">
-
-                        </TextView>
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/nsw_driver_licenece_number"/>
 
                     </LinearLayout>
 
                     <EditText
+                        android:id="@+id/signupCoachLicenceNumET"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/signTV"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:background="@drawable/white_rect_border"
                         android:fontFamily="@font/poppins_regular"
                         android:imeOptions="actionNext"
-                        android:inputType="textEmailAddress"
+                        android:inputType="number"
                         android:paddingHorizontal="@dimen/_13sdp"
                         android:paddingVertical="@dimen/_11sdp"
                         android:singleLine="true"
                         android:textColorHint="@color/Black"
                         android:textSize="@dimen/_13ssp" />
-
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -341,23 +322,13 @@
                         android:orientation="horizontal">
 
                         <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        </RadioButton>
-
-                        <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/_12ssp"
                             android:text="@string/Atsi"
-                            android:fontFamily="@font/poppins_regular"
-                            android:textColor="@color/black">
-
-                        </TextView>
+                            android:fontFamily="@font/poppins_regular"/>
 
                     </LinearLayout>
-
 
 
                     <LinearLayout
@@ -374,21 +345,11 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:layout_width="@dimen/_20sdp"
-                                android:layout_height="@dimen/_20sdp">
-
-                            </RadioButton>
-
-                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="@dimen/_13ssp"
                                 android:text="@string/volunteer"
-                                android:fontFamily="@font/poppins_medium"
-                                android:layout_marginLeft="@dimen/_6sdp"
-                                android:textColor="@color/black">
-
-                            </TextView>
+                                android:fontFamily="@font/poppins_regular"/>
 
                         </LinearLayout>
                         <LinearLayout
@@ -399,51 +360,26 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:layout_width="@dimen/_20sdp"
-                                android:layout_height="@dimen/_20sdp">
-
-                            </RadioButton>
-
-                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="@dimen/_13ssp"
-                                android:fontFamily="@font/poppins_medium"
-                                android:text="@string/paid"
-                                android:layout_marginLeft="@dimen/_6sdp"
-                                android:textColor="@color/black">
-
-                            </TextView>
+                                android:fontFamily="@font/poppins_regular"
+                                android:text="@string/paid"/>
 
                         </LinearLayout>
                     </LinearLayout>
-
-
-
-
                     <LinearLayout
                         android:id="@+id/agreeLL"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_11sdp"
-                        android:orientation="horizontal">
+                        android:layout_marginTop="@dimen/_11sdp">
 
                         <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        </RadioButton>
-
-                        <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/_13ssp"
                             android:text="@string/i_agree"
-                            android:fontFamily="@font/poppins_medium"
-                            android:textColor="@color/black">
-
-                        </TextView>
-
+                            android:fontFamily="@font/poppins_regular"/>
                     </LinearLayout>
 
 
@@ -480,7 +416,6 @@
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:id="@+id/signUpHereTV"
                                 android:layout_width="wrap_content"
-                                android:layout_below="@+id/continueAccountTV"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:onClick="@{(view)->handleClick.onViewClick(view)}"
@@ -502,15 +437,9 @@
                                 android:onClick="@{(view)->handleClick.onViewClick(view)}">
 
                             </TextView>
-
-
                         </LinearLayout>
-
-
                     </LinearLayout>
-
                 </LinearLayout>
-
             </RelativeLayout>
         </androidx.core.widget.NestedScrollView>
     </RelativeLayout>
