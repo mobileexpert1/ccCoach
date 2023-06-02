@@ -1,4 +1,4 @@
-package com.cccoach.ui.fragments.notification
+package com.cccoach.ui.fragments.Notification
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,13 @@ import com.cccoach.databinding.FragmentNotificationBinding
 import com.cccoach.ui.activities.MainActivity
 import com.cccoach.ui.adapter.NotificationAdapter.NotificationAdapter
 import com.cccoach.ui.base.BaseFragment
+import com.cccoach.utils.HandleClickListener
 
-
-class NotificationFragment : BaseFragment() {
+class NotificationFragment :BaseFragment(),HandleClickListener{
 
     var binding:FragmentNotificationBinding?=null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
-    }
-
-    override fun onCreateView(
+   override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -50,10 +43,19 @@ class NotificationFragment : BaseFragment() {
     }
 
     private fun initUI() {
+        binding!!.handleClick=this
         val notificationAdapter = NotificationAdapter(requireContext())
         val linearLayoutManager = LinearLayoutManager(context)
         binding!!.notificationRCV.adapter = notificationAdapter
         binding!!.notificationRCV.layoutManager = linearLayoutManager
+    }
+
+    override fun onViewClick(view: View) {
+        when (view.id) {
+            R.id.ivBackpress->{
+                requireActivity().supportFragmentManager.popBackStack()
+            }
+        }
     }
 
 
