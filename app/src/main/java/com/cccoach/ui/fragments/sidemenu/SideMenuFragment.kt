@@ -88,13 +88,12 @@ class SideMenuFragment : BaseFragment(), HandleClickListener {
                 gotoLogout()
             }
 
-
         }
     }
 
     private fun gotoLogout() {
         val dialogBuilder = AlertDialog.Builder(requireContext())
-        dialogBuilder.setMessage("Are your sure you want to logout the app ?")
+        dialogBuilder.setMessage("Are you logout the app ?")
             .setCancelable(false)
             .setPositiveButton("Yes", DialogInterface.OnClickListener {
                     dialog, id ->

@@ -51,7 +51,7 @@ class ClosedTicketOfContactUsFragment : BaseFragment(),HandleClickListener, Cont
 
         when (view.id) {
             R.id.ivBackpress -> {
-                requireActivity().supportFragmentManager.popBackStack()
+                baseActivity!!.onBackPressed()
 
             }
         }

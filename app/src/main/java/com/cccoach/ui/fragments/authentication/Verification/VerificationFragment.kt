@@ -37,7 +37,7 @@ class VerificationFragment : BaseFragment(),HandleClickListener {
                 gotoNewPasswordFragment()
             }
             R.id.backIV->{
-                requireActivity().supportFragmentManager.popBackStack()
+                baseActivity!!.onBackPressed()
             }
             R.id.otp_view->{
               

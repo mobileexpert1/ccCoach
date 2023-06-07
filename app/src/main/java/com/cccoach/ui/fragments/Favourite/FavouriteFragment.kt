@@ -8,12 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.cccoach.R
 import com.cccoach.databinding.FragmentFavouriteBinding
 import com.cccoach.ui.activities.MainActivity
-import com.cccoach.ui.adapter.learner.CoachAdapter
+import com.cccoach.ui.adapter.Favourite.FavouriteAdapter
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.utils.HandleClickListener
 
-
-class FavouriteFragment : BaseFragment(), HandleClickListener,CoachAdapter.ClickListeners {
+class FavouriteFragment : BaseFragment(), HandleClickListener,FavouriteAdapter.ClickListeners {
 
     var binding : FragmentFavouriteBinding?=null
 
@@ -34,24 +33,23 @@ class FavouriteFragment : BaseFragment(), HandleClickListener,CoachAdapter.Click
             baseActivity!!.getString(R.string.ll),
             isTitle = true, isToolbar = false, isBottom = false
         )
-        val rvCoachList = binding!!.rvCoachList
-        val coachAdapter = CoachAdapter(requireContext(),this)
+        val rvFavoriteList = binding!!.rvFavoriteList
+        val favouriteAdapter = FavouriteAdapter(requireContext(),this)
         val linearLayoutManager = LinearLayoutManager(context)
-        rvCoachList.adapter = coachAdapter
-        rvCoachList.layoutManager = linearLayoutManager
+        rvFavoriteList.adapter = favouriteAdapter
+        rvFavoriteList.layoutManager = linearLayoutManager
     }
 
     override fun onViewClick(view: View) {
             when (view.id) {
                 R.id.backIV->{
                     requireActivity().supportFragmentManager.popBackStack()
-
             }
-
         }
     }
 
     override fun onclick(position: Int) {
+
     }
 
 }

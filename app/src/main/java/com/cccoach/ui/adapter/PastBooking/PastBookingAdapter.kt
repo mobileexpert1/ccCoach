@@ -1,4 +1,4 @@
-package com.cccoach.ui.adapter.learner
+package com.cccoach.ui.adapter.PastBooking
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import com.cccoach.R
 import com.cccoach.databinding.ItemCoachBinding
 
 
-class CoachAdapter(val context: Context, private var listener: ClickListeners) : RecyclerView.Adapter<CoachAdapter.ViewHolder>() {
+class PastBookingAdapter(val context: Context, private var listener: ClickListeners) : RecyclerView.Adapter<PastBookingAdapter.ViewHolder>() {
 
     private lateinit var binding: ItemCoachBinding
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -33,5 +33,6 @@ class CoachAdapter(val context: Context, private var listener: ClickListeners) :
     override fun getItemCount(): Int {
         return 5
     }
+
 
 }

@@ -9,12 +9,8 @@ import com.cccoach.R
 import com.cccoach.databinding.FragmentContactUsBinding
 import com.cccoach.ui.activities.MainActivity
 import com.cccoach.ui.adapter.ContactUs.ContactUsAdapter
-import com.cccoach.ui.adapter.Message.ChatMessageAdapter
-import com.cccoach.ui.adapter.learner.CoachAdapter
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.ui.extensions.replaceFragment
-import com.cccoach.ui.fragments.FindACoach.FindACoachFragment
-import com.cccoach.ui.fragments.bookanAppointment.BookAnAppointmentFragment
 import com.cccoach.utils.HandleClickListener
 
 class ContactUsFragment : BaseFragment(),HandleClickListener , ContactUsAdapter.ClickListeners{
@@ -47,7 +43,7 @@ class ContactUsFragment : BaseFragment(),HandleClickListener , ContactUsAdapter.
     override fun onViewClick(view: View) {
         when (view.id) {
             R.id.ivBackpress->{
-                requireActivity().supportFragmentManager.popBackStack()
+                baseActivity!!.onBackPressed()
             }
 
         }

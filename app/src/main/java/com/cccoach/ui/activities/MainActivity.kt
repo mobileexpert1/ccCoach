@@ -1,7 +1,10 @@
 package com.cccoach.ui.activities
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import android.view.WindowInsets.Side
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.cccoach.R
@@ -12,13 +15,15 @@ import com.cccoach.ui.extensions.setColor
 import com.cccoach.ui.extensions.visibleView
 import com.cccoach.ui.fragments.Learner.home.HomeFragment
 import com.cccoach.ui.fragments.Learner.myrequest.MyRequestFragment
-import com.cccoach.ui.fragments.notification.NotificationFragment
+import com.cccoach.ui.fragments.Notification.NotificationFragment
+import com.cccoach.ui.fragments.profile.ProfileFragment
 import com.cccoach.ui.fragments.sidemenu.SideMenuFragment
 import com.cccoach.utils.HandleClickListener
 
 class MainActivity : BaseActivity(), HandleClickListener {
 
     private lateinit var binding: ActivityMainBinding
+    private var exit: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,7 +82,6 @@ class MainActivity : BaseActivity(), HandleClickListener {
     private fun init() {
         setToolbar()
         binding.clickHandler = this
-
         replaceFragment(HomeFragment())
 
     }
@@ -99,7 +103,6 @@ class MainActivity : BaseActivity(), HandleClickListener {
             is SideMenuFragment -> {
                 binding.sidemenuIV.setImageResource(R.drawable.sidemenu_blue)
             }
-
         }
     }
 
@@ -140,5 +143,42 @@ class MainActivity : BaseActivity(), HandleClickListener {
 
         }
     }
+
+
+    override fun onBackPressed() {
+        val fragment = supportFragmentManager.findFragmentById(R.id.frame_container)
+        when {
+            fragment is HomeFragment-> {
+                backAction()
+            }
+            fragment is MyRequestFragment->{
+             replaceFragment(HomeFragment(), R.id.frame_container)
+            }
+            fragment is NotificationFragment->{
+                replaceFragment(HomeFragment(),R.id.frame_container)
+            }
+            fragment is SideMenuFragment->{
+                replaceFragment(HomeFragment(),R.id.frame_container)
+            }
+            supportFragmentManager.backStackEntryCount > 0 -> {
+                supportFragmentManager.popBackStack()
+            }
+            else -> {
+                //gotoHomeFragment()
+            }
+
+        }
+    }
+
+    fun backAction() {
+        if (exit) {
+            finishAffinity()
+        } else {
+            showToastOne(getString(R.string.press_one_more_time))
+            exit = true
+            Handler(Looper.getMainLooper()).postDelayed({ exit = false }, (2 * 1000).toLong())
+        }
+    }
+
 
 }

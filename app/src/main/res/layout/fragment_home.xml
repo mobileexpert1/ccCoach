@@ -76,7 +76,6 @@
                     android:textSize="@dimen/_10ssp"
                     android:textStyle="bold"
                     android:fontFamily="@font/poppins_bold"
-
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -158,7 +157,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/indicatorsSession" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvCoachList"
+                android:id="@+id/rvHomeCoachList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/_4sdp"

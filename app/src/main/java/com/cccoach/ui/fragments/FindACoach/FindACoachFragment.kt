@@ -42,7 +42,7 @@ class FindACoachFragment : BaseFragment(),HandleClickListener {
 
         when (view.id) {
             R.id.ivBackpress->{
-                requireActivity().supportFragmentManager.popBackStack()
+                baseActivity!!.onBackPressed()
             }
             R.id.findCoachesTV->{
                 gotoCoaches()

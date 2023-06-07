@@ -2,7 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <data>
         <variable
             name="handleClick"
@@ -61,7 +60,6 @@
                     android:paddingHorizontal="@dimen/_3sdp"
                     android:paddingVertical="@dimen/_7sdp"
                     android:src="@drawable/ic_edit_profile" />
-
             </LinearLayout>
 
             <ImageView
@@ -69,10 +67,6 @@
                 android:layout_width="wrap_content"
                 android:src="@drawable/profile_bg"
                 android:layout_height="wrap_content"/>
-
-
-
-
             <FrameLayout
                 android:layout_below="@+id/toolbarLL"
                 android:id="@+id/topFL"
@@ -82,7 +76,6 @@
                 android:layout_marginLeft="@dimen/_5sdp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/profilePicCIV"
                     android:layout_width="@dimen/_100sdp"
                     android:layout_height="@dimen/_100sdp"
@@ -129,11 +122,10 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/full_name"/>
 
-
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/fullNameACET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/fullNameTv"
                     android:background="@drawable/white_rect_border"
                     android:hint="@string/Johnson_Smith"
                     android:imeOptions="actionNext"
@@ -152,11 +144,10 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/eamil_addresofProfile"/>
 
-
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/emailAddressACET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/fullNameTv"
                     android:background="@drawable/white_rect_border"
                     android:hint="@string/email_address"
                     android:imeOptions="actionNext"
@@ -167,7 +158,6 @@
                     android:textColorHint="@color/Black"
                     android:textSize="@dimen/_13ssp" />
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -176,11 +166,10 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/address"/>
 
-
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/addressACET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/fullNameTv"
                     android:background="@drawable/white_rect_border"
                     android:hint="@string/address_text"
                     android:imeOptions="actionNext"
@@ -189,10 +178,6 @@
                     android:paddingVertical="@dimen/_11sdp"
                     android:textColorHint="@color/Black"
                     android:textSize="@dimen/_11ssp" />
-
-
-
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -201,11 +186,10 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/license_number"/>
 
-
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/driverlicenceACET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/fullNameTv"
                     android:background="@drawable/white_rect_border"
                     android:hint="@string/license_number_digit"
                     android:imeOptions="actionNext"
@@ -218,8 +202,6 @@
                     android:textColorHint="@color/Black"
                     android:textSize="@dimen/_11ssp" />
 
-
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -228,11 +210,10 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/atsi_identifiction"/>
 
-
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/atsiACET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/fullNameTv"
                     android:background="@drawable/white_rect_border"
                     android:hint="@string/atsi_identifiction_digit"
                     android:imeOptions="actionNext"
@@ -245,7 +226,6 @@
                     android:textColorHint="@color/Black"
                     android:textSize="@dimen/_11ssp" />
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -254,11 +234,10 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/DOB"/>
 
-
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/dobACET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/fullNameTv"
                     android:background="@drawable/white_rect_border"
                     android:hint="@string/Date_of_birth"
                     android:imeOptions="actionNext"
@@ -270,7 +249,6 @@
                     android:maxLines="2"
                     android:textColorHint="@color/Black"
                     android:textSize="@dimen/_11ssp" />
-
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -293,7 +271,6 @@
                         android:layout_width="wrap_content"
                         android:layout_marginLeft="@dimen/_20sdp"
                         android:layout_height="wrap_content"/>
-
                 </LinearLayout>
 
 
@@ -307,9 +284,8 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="@string/post_booking"/>
 
-
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/postBookingRCv"
+                    android:id="@+id/postBookingRCV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:listitem="@layout/item_coach">

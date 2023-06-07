@@ -4,14 +4,22 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.cccoach.R
+import com.cccoach.databinding.NotificationItemsBinding
 
-class NotificationAdapter(val context: Context) : RecyclerView.Adapter<NotificationAdapter.ViewHolder>() {
+class NotificationAdapter(val context: Context,private var listener: NotificationAdapter.ClickListeners) : RecyclerView.Adapter<NotificationAdapter.ViewHolder>() {
+
+    private lateinit var binding: NotificationItemsBinding
+
+    interface ClickListeners {
+        fun onclick(position: Int)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view: View = LayoutInflater.from(context).inflate(R.layout.notification_items, parent, false)
-        return ViewHolder(view)
+        binding = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.notification_items, parent, false)
+        return ViewHolder(binding.root)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

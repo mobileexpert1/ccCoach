@@ -6,12 +6,11 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.*
 import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cccoach.R
 import com.cccoach.databinding.FragmentHomeBinding
 import com.cccoach.ui.activities.MainActivity
-import com.cccoach.ui.adapter.learner.CoachAdapter
+import com.cccoach.ui.adapter.HomeCoachList.HomeCoachListAdapter
 import com.cccoach.ui.adapter.learner.SessionAdapter
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.ui.extensions.replaceFragment
@@ -21,12 +20,7 @@ import com.cccoach.utils.HandleClickListener
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.zhpan.indicator.enums.IndicatorSlideMode
 import com.zhpan.indicator.enums.IndicatorStyle
-
-//import com.zhpan.indicator.enums.IndicatorSlideMode
-//import com.zhpan.indicator.enums.IndicatorStyle
-
-
-class HomeFragment : BaseFragment(), HandleClickListener,CoachAdapter.ClickListeners {
+class HomeFragment : BaseFragment(), HandleClickListener, HomeCoachListAdapter.ClickListeners {
     var binding: FragmentHomeBinding? = null
 
     override fun onCreateView(
@@ -41,22 +35,20 @@ class HomeFragment : BaseFragment(), HandleClickListener,CoachAdapter.ClickListe
 
     private fun initUI() {
         binding!!.handleClick = this
-        (baseActivity as MainActivity).setIcon()
-        (baseActivity as MainActivity).setToolbar(
-            baseActivity!!.getString(R.string.ll),
-            isTitle = true, isToolbar = false, isBottom = true
-        )
-        val vpSessions = binding!!.vpSessions
-        val rvCoachList = binding!!.rvCoachList
+        bottomSheetRemove()
 
+        /*
+        * List Binding
+        * */
+        val vpSessions = binding!!.vpSessions
+        val rvHomeCoachList = binding!!.rvHomeCoachList
+
+        /*
+        * Session Adapter
+        * */
         val viewPager2Adapter = SessionAdapter(requireContext())
         vpSessions.setPadding(20, 5, 20, 5)
         vpSessions.setAdapter(viewPager2Adapter)
-
-        val coachAdapter = CoachAdapter(requireContext(), this)
-        val linearLayoutManager = LinearLayoutManager(context)
-        rvCoachList.adapter = coachAdapter
-        rvCoachList.layoutManager = linearLayoutManager
 
         val indicatorView = binding!!.indicatorsSession
         indicatorView.apply {
@@ -68,23 +60,37 @@ class HomeFragment : BaseFragment(), HandleClickListener,CoachAdapter.ClickListe
             setupWithViewPager(vpSessions)
 
         }
+
+        /*
+        * Home Cach List Adapter
+        * */
+
+        val homeCoachListAdapter = HomeCoachListAdapter(requireContext(), this)
+        val linearLayoutManager = LinearLayoutManager(context)
+        rvHomeCoachList.adapter = homeCoachListAdapter
+        rvHomeCoachList.layoutManager = linearLayoutManager
+
+    }
+
+    private fun bottomSheetRemove() {
+        (baseActivity as MainActivity).setIcon()
+        (baseActivity as MainActivity).setToolbar(
+            baseActivity!!.getString(R.string.ll),
+            isTitle = true, isToolbar = false, isBottom = true
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
     }
 
     override fun onViewClick(view: View) {
         when (view.id) {
             R.id.ivLogoHome -> {
                 gotoProfile()
-
             }
             R.id.findACoachCL -> {
                 gotoFindaACoach()
-
             }
         }
     }
@@ -99,7 +105,6 @@ class HomeFragment : BaseFragment(), HandleClickListener,CoachAdapter.ClickListe
     }
 
     override fun onclick(position: Int) {
-
         val dialog = BottomSheetDialog(requireContext(), R.style.CustomBottomSheetDialogTheme)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.average_ratings_bottom_sheet)

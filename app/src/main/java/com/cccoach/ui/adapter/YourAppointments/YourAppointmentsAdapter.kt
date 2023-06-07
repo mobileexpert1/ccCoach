@@ -1,4 +1,4 @@
-package com.cccoach.ui.adapter.learner
+package com.cccoach.ui.adapter.YourAppointments
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import com.cccoach.R
 import com.cccoach.databinding.ItemCoachBinding
 
 
-class CoachAdapter(val context: Context, private var listener: ClickListeners) : RecyclerView.Adapter<CoachAdapter.ViewHolder>() {
+class YourAppointmentsAdapter(val context: Context, private var listener: ClickListeners) : RecyclerView.Adapter<YourAppointmentsAdapter.ViewHolder>() {
 
     private lateinit var binding: ItemCoachBinding
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

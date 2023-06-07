@@ -1,4 +1,4 @@
-package com.cccoach.ui.adapter.learner
+package com.cccoach.ui.adapter.Favourite
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,11 +10,10 @@ import com.cccoach.R
 import com.cccoach.databinding.ItemCoachBinding
 
 
-class CoachAdapter(val context: Context, private var listener: ClickListeners) : RecyclerView.Adapter<CoachAdapter.ViewHolder>() {
+class FavouriteAdapter(val context: Context, private var listener: ClickListeners) : RecyclerView.Adapter<FavouriteAdapter.ViewHolder>() {
 
     private lateinit var binding: ItemCoachBinding
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
     }
 
     interface ClickListeners {
@@ -27,11 +26,14 @@ class CoachAdapter(val context: Context, private var listener: ClickListeners) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         holder.itemView.setOnClickListener { listener.onclick(position) }
+
     }
 
     override fun getItemCount(): Int {
         return 5
     }
+
 
 }

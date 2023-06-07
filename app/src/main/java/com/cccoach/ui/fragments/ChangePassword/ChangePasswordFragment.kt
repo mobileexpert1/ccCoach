@@ -15,9 +15,9 @@ import com.cccoach.ui.base.BaseFragment
 import com.cccoach.utils.HandleClickListener
 
 
-class ChangePasswordFragment : BaseFragment(),HandleClickListener {
+class ChangePasswordFragment : BaseFragment(), HandleClickListener {
 
-    var binding:FragmentChangePasswordBinding?=null
+    var binding: FragmentChangePasswordBinding? = null
     var passwordvisible = false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +30,7 @@ class ChangePasswordFragment : BaseFragment(),HandleClickListener {
     }
 
     private fun initUI() {
-       binding!!.handleClick=this
+        binding!!.handleClick = this
         //Bottom navigation hide
 
         (baseActivity as MainActivity).setIcon()
@@ -44,7 +44,7 @@ class ChangePasswordFragment : BaseFragment(),HandleClickListener {
         when (view.id) {
 
             R.id.ivBackpress -> {
-                requireActivity().supportFragmentManager.popBackStack()
+                baseActivity!!.onBackPressed()
             }
             R.id.passwordsetEyeImv -> {
                 binding!!.passwordsetEyeImv.setOnClickListener(object : View.OnClickListener {
@@ -64,7 +64,6 @@ class ChangePasswordFragment : BaseFragment(),HandleClickListener {
                         }
                     }
                 })
-
             }
 
             R.id.newpasswordEyeImv -> {
@@ -72,20 +71,21 @@ class ChangePasswordFragment : BaseFragment(),HandleClickListener {
                     override fun onClick(view: View?) {
                         if (!passwordvisible) {
                             binding!!.newpasswordET.setTransformationMethod(
-                                PasswordTransformationMethod.getInstance())
+                                PasswordTransformationMethod.getInstance()
+                            )
                             passwordvisible = true
                             binding!!.newpasswordET.setSelection(binding!!.newpasswordET.getText().length)
                             binding!!.newpasswordEyeImv.setImageResource(R.drawable.ic_hide)
                         } else {
                             binding!!.newpasswordET.setTransformationMethod(
-                                HideReturnsTransformationMethod.getInstance())
+                                HideReturnsTransformationMethod.getInstance()
+                            )
                             passwordvisible = false
                             binding!!.newpasswordET.setSelection(binding!!.newpasswordET.getText().length)
                             binding!!.newpasswordEyeImv.setImageResource(R.drawable.ic_show)
                         }
                     }
                 })
-
             }
 
             R.id.confirmpasswordEyeImv -> {
@@ -93,19 +93,33 @@ class ChangePasswordFragment : BaseFragment(),HandleClickListener {
                     override fun onClick(view: View?) {
                         if (!passwordvisible) {
                             binding!!.confirmpasswordET.setTransformationMethod(
-                                PasswordTransformationMethod.getInstance())
+                                PasswordTransformationMethod.getInstance()
+                            )
                             passwordvisible = true
                             binding!!.confirmpasswordET.setSelection(binding!!.confirmpasswordET.getText().length)
                             binding!!.confirmpasswordEyeImv.setImageResource(R.drawable.ic_hide)
                         } else {
                             binding!!.confirmpasswordET.setTransformationMethod(
-                                HideReturnsTransformationMethod.getInstance())
+                                HideReturnsTransformationMethod.getInstance()
+                            )
                             passwordvisible = false
                             binding!!.confirmpasswordET.setSelection(binding!!.confirmpasswordET.getText().length)
                             binding!!.confirmpasswordEyeImv.setImageResource(R.drawable.ic_show)
                         }
                     }
                 })
+            }
+
+            R.id.savechangepassTV -> {
+                if (binding!!.oldpasswordET.text.isEmpty()) {
+                    showShortToast("Please enter old password.")
+                } else if (binding!!.newpasswordET.text.isEmpty()) {
+                    showShortToast("Please enter new password.")
+                } else if (binding!!.confirmpasswordET.text.isEmpty()) {
+                    showShortToast("Please enter confirm password.")
+                } else {
+                   // showShortToast("Password changed successfully")
+                }
             }
         }
     }

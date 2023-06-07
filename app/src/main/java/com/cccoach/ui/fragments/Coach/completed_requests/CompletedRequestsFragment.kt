@@ -1,7 +1,6 @@
-package com.cccoach.ui.fragments.coach.completed_requests
+package com.cccoach.ui.fragments.Coach.completed_requests
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,21 +8,19 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cccoach.R
 import com.cccoach.databinding.FragmentCompletedRequestsBinding
-import com.cccoach.databinding.FragmentMyRequestBinding
-import com.cccoach.ui.adapter.learner.CoachAdapter
+import com.cccoach.ui.adapter.CompletedRequest.CompletedRequestAdapter
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.utils.HandleClickListener
 
 
-class CompletedRequestsFragment : BaseFragment(), HandleClickListener,CoachAdapter.ClickListeners {
+class CompletedRequestsFragment : BaseFragment(), HandleClickListener,CompletedRequestAdapter.ClickListeners {
 
     var binding : FragmentCompletedRequestsBinding?=null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         if (binding == null)  binding = FragmentCompletedRequestsBinding.inflate(inflater, container, false)
         initUI()
         return binding!!.root
@@ -31,11 +28,11 @@ class CompletedRequestsFragment : BaseFragment(), HandleClickListener,CoachAdapt
 
     private fun initUI() {
         binding!!.handleClick=this
-        val rvCoachList = binding!!.rvCoachList
-        val coachAdapter = CoachAdapter(requireContext(),this)
+        val rvCompletedRequestList = binding!!.rvCompletedRequestList
+        val completedRequestAdapter = CompletedRequestAdapter(requireContext(),this)
         val linearLayoutManager = LinearLayoutManager(context)
-        rvCoachList.adapter = coachAdapter
-        rvCoachList.layoutManager = linearLayoutManager
+        rvCompletedRequestList.adapter = completedRequestAdapter
+        rvCompletedRequestList.layoutManager = linearLayoutManager
     }
 
     override fun onViewClick(view: View) {

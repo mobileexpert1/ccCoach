@@ -10,15 +10,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.cccoach.R
 import com.cccoach.databinding.FragmentMyRequestBinding
 import com.cccoach.ui.activities.MainActivity
-import com.cccoach.ui.adapter.learner.CoachAdapter
+import com.cccoach.ui.adapter.MyRequests.MyRequestAdapter
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.ui.extensions.replaceFragment
 import com.cccoach.ui.fragments.profile.ProfileFragment
 import com.cccoach.utils.HandleClickListener
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
-class MyRequestFragment : BaseFragment(), HandleClickListener,CoachAdapter.ClickListeners {
+class MyRequestFragment : BaseFragment(), HandleClickListener,MyRequestAdapter.ClickListeners {
 
     var binding : FragmentMyRequestBinding?=null
 
@@ -41,11 +42,11 @@ class MyRequestFragment : BaseFragment(), HandleClickListener,CoachAdapter.Click
             baseActivity!!.getString(R.string.ll),
             isTitle = true, isToolbar = false, isBottom = true
         )
-        val rvCoachList = binding!!.rvCoachList
-        val coachAdapter = CoachAdapter(requireContext(),this)
+        val rvMyRequestCoachList = binding!!.rvMyRequestCoachList
+        val myRequestAdapter = MyRequestAdapter(requireContext(),this)
         val linearLayoutManager = LinearLayoutManager(context)
-        rvCoachList.adapter = coachAdapter
-        rvCoachList.layoutManager = linearLayoutManager
+        rvMyRequestCoachList.adapter = myRequestAdapter
+        rvMyRequestCoachList.layoutManager = linearLayoutManager
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -96,10 +97,7 @@ class MyRequestFragment : BaseFragment(), HandleClickListener,CoachAdapter.Click
             R.id.ivLogo->{
                 gotoProfile()
             }
-
         }
-
-
     }
 
     override fun onclick(position: Int) {
@@ -107,6 +105,8 @@ class MyRequestFragment : BaseFragment(), HandleClickListener,CoachAdapter.Click
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.average_ratings_with_review_sheet)
         dialog.show()
+        dialog.behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        dialog.behavior.setPeekHeight(0);
         val window = dialog.window
         window!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#00FFFFFF")))
         window.setLayout(

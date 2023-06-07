@@ -13,8 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/_10sdp"
-        >
+        android:padding="@dimen/_10sdp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clLogo"
@@ -228,9 +227,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvCoachList"
+            android:id="@+id/rvYourAppointmentsList"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:onClick="@{(view)->handleClick.onViewClick(view)}"
             android:layout_marginTop="@dimen/_4sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -82,7 +82,7 @@ class LoginFragment : BaseFragment(),HandleClickListener {
                 forgotPasswordFragment()
             }
             R.id.backIV -> {
-                requireActivity().supportFragmentManager.popBackStack()
+               baseActivity!!.onBackPressed()
             }
         }
 

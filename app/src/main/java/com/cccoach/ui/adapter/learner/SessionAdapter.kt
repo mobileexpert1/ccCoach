@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.cccoach.R
-import com.cccoach.databinding.ItemCoachBinding
 import com.cccoach.databinding.ItemSessionsBinding
 
 

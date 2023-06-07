@@ -32,7 +32,6 @@ class TutorialGuideLSFragment : BaseFragment(), HandleClickListener {
         return binding!!.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -62,6 +61,7 @@ class TutorialGuideLSFragment : BaseFragment(), HandleClickListener {
             R.id.signupTV -> {
                signuptutsFragment()
             }
+
         }
 
     }

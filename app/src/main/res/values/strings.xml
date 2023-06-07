@@ -96,10 +96,9 @@
     <string name="when_do_you_want_your_lesson">When do you want your lesson</string>
     <string name="done">Done</string>
     <string name="_9_00_am_11_00_pm">9:00 AM-11:00 PM</string>
-
     <string name="logo">LOGO</string>
     <string name="find_a_coach">Find a Coach</string>
-    <string name="accelerate_your_driving_skills_with_a_professional_coach_by_your_side">Accelerate your driving skills \nwith a professional coach by \nyour side.</string>
+    <string name="accelerate_your_driving_skills_with_a_professional_coach_by_your_side">Accelerate your driving skills with a professional coach by your side.</string>
     <string name="upcoming_sessions">Upcoming Sessions</string>
     <string name="appointment">Appointment</string>
     <string name="time">Time</string>
@@ -129,7 +128,6 @@
     <string name="your_appointments">Your Appointments</string>
     <string name="offline">Offline</string>
     <string name="completed_requests">Completed Requests</string>
-
     <string name="John_Smith"> John Smith </string>
     <string name="edit_personal_info"> Edit personal info </string>
     <string name="Average_ratings"> Average ratings </string>
@@ -186,10 +184,11 @@
     <string name="privacy"> Privacy  </string>
     <string name="policy"> Policy  </string>
     <string name="ratecoach"> Rate Coach  </string>
-
     <string name="save"> Save  </string>
     <string name="Home"> Home  </string>
     <string name="write_review">Write review</string>
+    <string name="review_received">Review received</string>
+    <string name="press_one_more_time">Press one more time to push app into background</string>
     <string name="coach_notify_message">Coach has been notified of your appointment request. Please hold off for the coach\'s confirmation.</string>
 
 

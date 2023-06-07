@@ -40,7 +40,7 @@ class AboutUsFragment :BaseFragment(),HandleClickListener {
     override fun onViewClick(view: View) {
         when (view.id) {
             R.id.ivBackpress-> {
-                requireActivity().supportFragmentManager.popBackStack()
+                baseActivity!!.onBackPressed()
             }
         }
     }

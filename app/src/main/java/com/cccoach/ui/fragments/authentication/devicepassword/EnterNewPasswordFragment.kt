@@ -38,9 +38,6 @@ class EnterNewPasswordFragment : BaseFragment(),HandleClickListener{
     override fun onViewClick(view: View) {
         when (view.id) {
             R.id.enterdevicePasswordcontiuneTV -> {
-
-
-
                 var dialog = Dialog(baseActivity!!,R.style.CustomBottomSheetDialogTheme)
                 dialog.setCancelable(true)
                 dialog.setContentView(R.layout.no_touch_id_popup)
@@ -53,14 +50,11 @@ class EnterNewPasswordFragment : BaseFragment(),HandleClickListener{
                     baseActivity!!.gotMainActivity()
                 }
                 dialog.show()
-
             }
             R.id.backIV->{
-                requireActivity().supportFragmentManager.popBackStack()
+                baseActivity!!.onBackPressed()
             }
 
         }
     }
-
-
 }

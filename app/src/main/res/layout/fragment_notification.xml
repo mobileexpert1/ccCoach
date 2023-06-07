@@ -66,9 +66,6 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
-
-
-
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>

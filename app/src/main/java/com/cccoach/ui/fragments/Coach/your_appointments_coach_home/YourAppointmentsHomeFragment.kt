@@ -1,9 +1,7 @@
-package com.cccoach.ui.fragments.coach.coach_home
+package com.cccoach.ui.fragments.Coach.your_appointments_coach_home
 
-import android.content.res.Resources.Theme
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +9,12 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cccoach.R
 import com.cccoach.databinding.FragmentCoachHomeBinding
-import com.cccoach.ui.adapter.learner.CoachAdapter
+import com.cccoach.ui.adapter.YourAppointments.YourAppointmentsAdapter
 import com.cccoach.ui.base.BaseFragment
 import com.cccoach.utils.HandleClickListener
 
 
-class CoachHomeFragment : BaseFragment(), HandleClickListener,CoachAdapter.ClickListeners {
+class YourAppointmentsHomeFragment : BaseFragment(), HandleClickListener,YourAppointmentsAdapter.ClickListeners {
 
     var binding : FragmentCoachHomeBinding?=null
 
@@ -31,11 +29,11 @@ class CoachHomeFragment : BaseFragment(), HandleClickListener,CoachAdapter.Click
     }
 
     private fun initUI() {
-        val rvCoachList = binding!!.rvCoachList
-        val coachAdapter = CoachAdapter(requireContext(),this)
+        val rvYourAppointmentsList = binding!!.rvYourAppointmentsList
+        val yourAppointmentsAdapter = YourAppointmentsAdapter(requireContext(),this)
         val linearLayoutManager = LinearLayoutManager(context)
-        rvCoachList.adapter = coachAdapter
-        rvCoachList.layoutManager = linearLayoutManager
+        rvYourAppointmentsList.adapter = yourAppointmentsAdapter
+        rvYourAppointmentsList.layoutManager = linearLayoutManager
     }
 
     private fun unselectAllTabs() {
